@@ -1,6 +1,6 @@
 #!/bin/bash
 EXCEPECTED="Hello, test!"
-OUTPUT=$(node -e "console.log(require('./src/app')('Test'))")
+OUTPUT=$(node -e "console.log(require('./src/app')('test'))")
 if [[ OUTPUT == EXCEPECTED ]]; then
 echo "-----------Test Passed ----------------"
 exit 0

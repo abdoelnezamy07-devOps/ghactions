@@ -1,11 +1,11 @@
 #!/bin/bash
-EXCEPECTED="Hello, test!"
+EXPECTED="Hello, test!"
 OUTPUT=$(node -e "console.log(require('./src/app')('test'))")
-if [[ OUTPUT == EXCEPECTED ]]; then
+if [[ $OUTPUT == $EXPECTED ]]; then
 echo "-----------Test Passed ----------------"
 exit 0
 else 
 echo "---------- Test Failed ----------------"
-echo "Exepcted is $EXCEPECTED but got $OUTPUT"
+echo "Expcted is $EXPECTED but got $OUTPUT"
 exit 1
 fi 

@@ -47,3 +47,11 @@ jobs:
     steps:
       - name: Print ENV name
         run: echo "Environment name is ${{ inputs.environment }}"
+        # or
+        # run: |
+            #npm install / install / build
+            ###
+            ###
+        # working-directory: ./any dir you wanna run this command in 
+        # shell: its default with runner or pwsh/python/cmd/powershell or any language scripts then {0} it will be by default for this jobs
+            

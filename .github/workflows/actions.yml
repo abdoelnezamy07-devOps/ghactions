@@ -1,0 +1,30 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  hyprid_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: .........
+        run: echo "this run on Vm"
+
+      - name: Run inside alpine container
+        uses: docker://alpine:3.14 ### its an image and must be has apuplic access
+        with:
+          entrypoint: /bin/sh 
+          args: | 
+            -C 
+            echo "this runs inside alpine container"
+      - name: .........
+        run: echo "back to run on Vm"
+  dockrized_job:
+    runs-on: ubuntu-latest
+    container: node:20 #IF it puplic and dont need credentials
+      # image: ### if it in a private repo
+      # credentials:
+      #   username: ${{ secrets.DOCKER_USERNAME }}
+      #   password: ${{ secrets.docker_password }}
+    steps:
+      - name: ...........
+        run: node --version
+      - run: echo "this all jobs rin inside node container"

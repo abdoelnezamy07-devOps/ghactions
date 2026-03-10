@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: ....
+        default: "1"
+        type: choice
+        options:
+          - 1
+          - 2
+          - 3
+jobs:
+  job_1:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14.x , 15.x , 16,x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: action/setup-node@v3.6.0
+        with:
+          node_version: ${{ matrix.node_version }}

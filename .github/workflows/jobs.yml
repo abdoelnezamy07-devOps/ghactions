@@ -1,5 +1,15 @@
 on:
   workflow_dispatch:
+   inputs:
+      environment:
+        description: "Choose Environment"
+        default: "staging"
+        required: true
+        type: choice
+        options:
+          - dev
+          - production
+          - staging
 
 jobs:
   job_1:
@@ -27,3 +37,13 @@ jobs:
     steps:
       - name: job4
         run: "echo ${{ github.job }}"
+  job_5:
+    runs-on: ubuntu-latest
+    needs:
+      - job_1
+      - job_2
+      - job_3
+      - job_4
+    steps:
+      - name: Print ENV name
+        run: echo "Environment name is ${{ inputs.environment }}"

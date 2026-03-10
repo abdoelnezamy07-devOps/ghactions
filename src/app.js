@@ -3,6 +3,6 @@ function greet(name) {
 }
   module.exports = greet
   
-  if (require.man === module) {
-    console.log(greet("world"));
-  }
+  // if (require.man === module) {
+  //   console.log(greet("world"));
+  // }

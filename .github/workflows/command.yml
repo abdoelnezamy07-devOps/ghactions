@@ -11,8 +11,10 @@ jobs:
             fi
       - name: set API key
         run: echo "API_KEY=12341213" >> $GITHUB_ENV # to use it again in another steps
-      - name: print API
-        run: echo "API KEY is $API_KEY"
+      - name: Use API
+        run: |
+          echo "::add-mask::$API_KEY" 
+          echo "API KEY is $API_KEY"
       - name: Check if file exists
         run: |
           if [[ -f filename.yaml ]]; then 

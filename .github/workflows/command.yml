@@ -8,4 +8,8 @@ jobs:
           deprecated=true
           if [[ deprecated ]]; then
             echo "::warning::Deprecated function found"
-            fi 
+            fi
+      - name: set API key
+        run: echo "API_KEY=12341213" >> $GITHUB_ENV # to use it again in another steps
+      - name: print API
+        run: echo "API KEY is $API_KEY"

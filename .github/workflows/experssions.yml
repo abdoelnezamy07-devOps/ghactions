@@ -1,0 +1,15 @@
+# on: 
+#   workflow_dispatch:
+# jobs:
+#   experssions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: print a massage
+#         run: echo "The job is runnig"
+#         if: ${{ github.event_name == 'push' && ..............}}
+          ## ${{ contains(github.event.head_commit.message, '...') }}
+        ### above is a conditional step olny run when push code in main as example
+        ## Expressions { == / != / && / || }}
+        ## Functions { contains / startWith / sucess / failure / alaways / cancelled } of step         
+  
+        

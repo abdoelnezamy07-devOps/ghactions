@@ -12,18 +12,24 @@ jobs:
         run: echo "welcome to our first github actions worlflow"
         
       - name: List repository files before checkout
-        run: ls -la
-
+        run: |
+          ls -la
+          git log --oneline
+          
       - name: checkout repository
         uses: actions/checkout@v6.0.2
       
       - name: List repository files after checkout
-        run: ls -la
-      
+        run: |
+          ls -la
+          git log --oneline
+          
       - name: checkout repository with fetch all 
         uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
       
       - name: List repository files after checkout and fetch all repo
-        run: ls -la
+        run: |
+          ls -la
+          git log --oneline
